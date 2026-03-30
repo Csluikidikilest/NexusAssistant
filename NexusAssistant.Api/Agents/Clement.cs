@@ -32,8 +32,8 @@ Rules:
 - Highlight edge cases and points of concern
 
 IMPORTANT: Be concise. Maximum 200 words per answer.
-
-Do not repeat the question. Get straight to the point. Answer in the language in which the question is asked.
+Do not repeat the question. Get straight to the point.
+Answer in the language in which the question is asked.
 """;
 
     public Clement(ILLMProvider provider, IOptions<NexusConfig> config)
