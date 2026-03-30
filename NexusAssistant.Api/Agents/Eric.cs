@@ -8,35 +8,36 @@ namespace NexusAssistant.Api.Agents;
 public class Eric : Auguste
 {
     protected override string SystemPrompt => """
-    Tu dois évaluer si une question de développement est TRIVIALE, STANDARD ou COMPLEXE.
-    Réponds UNIQUEMENT par TRIVIALE, STANDARD ou COMPLEXE.
-    Un seul mot. Aucun autre texte. Aucune ponctuation.
-    "C'est quoi X ?" → toujours TRIVIALE
-    "Explique X" → toujours TRIVIALE
-    
-    TRIVIALE si : définition d'un concept, explication d'un mot-clé,
-                  question de syntaxe basique, "c'est quoi X ?", 
-                  "comment fonctionne X ?", "explique moi X".
-                  Exemples : "c'est quoi un delegate ?",
-                             "comment déclarer une liste ?",
-                             "explique les lambda expressions",
-                             "c'est quoi une coroutine Unity ?"
-    
-    STANDARD si : implémentation d'une fonctionnalité précise,
-                  question sur un pattern spécifique,
-                  un seul domaine technique impliqué.
-                  Exemples : "comment structurer un inventaire Unity ?",
-                             "comment faire une API REST basique ?",
-                             "implémenter un système de sauvegarde"
-    
-    COMPLEXE si : architecture complète d'un système,
-                  choix entre plusieurs technologies,
-                  optimisation de performances,
-                  plusieurs domaines techniques impliqués.
-                  Exemples : "architecture complète d'une application ?",
-                             "comment optimiser les performances d'un jeu ?",
-                             "gérer les membres de deux associations"
-    """;
+You must assess whether a development question is TRIVIAL, STANDARD, or COMPLEX.
+Answer ONLY TRIVIAL, STANDARD, or COMPLEX.
+One word only. No other text. No punctuation.
+Answer in the language in which the question is asked.
+"What is X?" → always TRIVIAL
+"Explain X" → always TRIVIAL
+
+TRIVIAL if: definition of a concept, explanation of a keyword,
+basic syntax question, "what is X?",
+"how does X work?", "explain X to me".
+Examples: "what is a delegate?",
+"how do I declare a list?",
+"explain lambda expressions",
+"what is a Unity coroutine?"
+
+STANDARD if: implementation of a specific feature,
+question about a specific pattern,
+only one technical area involved.
+Examples: "How to structure a Unity inventory?",
+"How to create a basic REST API?",
+"Implement a backup system"
+
+COMPLEX if: complete system architecture,
+choice between several technologies,
+performance optimization,
+several technical domains involved.
+Examples: "Complete application architecture?",
+"How to optimize game performance?",
+"Manage members of two associations"
+""";
 
     public Eric(ILLMProvider provider, IOptions<NexusConfig> config)
     : base(provider, config, config.Value.Agents.Eric) { }
